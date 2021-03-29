@@ -1,13 +1,15 @@
 ﻿@model TE29_HeartHealth_GCardiac.Models.PreferenceViewModels
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "AIAdvice";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>AIAdvice</h2>
 
-@using (Html.BeginForm()) 
+<iframe width="100%" height="100%" frameborder="0" scrolling="yes" src="https://deepak-chandralal.shinyapps.io/recommendation/"></iframe>
+
+@*@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
@@ -58,8 +60,8 @@
             </div>
         </div>
     </div>
-}
+}*@
 
-<div>
+@*<div>
     @Html.ActionLink("Back to List", "Index")
-</div>
+</div>*@
