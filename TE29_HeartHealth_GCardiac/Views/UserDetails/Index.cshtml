@@ -1,0 +1,53 @@
+﻿@model IEnumerable<TE29_HeartHealth_GCardiac.Models.user_details>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personal Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.heart_rate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.height)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.weight)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.heart_rate)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.age }) |
+        @Html.ActionLink("Details", "Details", new { id = item.age }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.age })
+    </td>
+</tr>
+}
+
+</table>

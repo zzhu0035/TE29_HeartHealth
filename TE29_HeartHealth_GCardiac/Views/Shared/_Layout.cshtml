@@ -27,6 +27,10 @@
                     <li>@Html.ActionLink("AIAdvice", "Create", "Preference")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("User Details", "Index", "UserDetails")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
