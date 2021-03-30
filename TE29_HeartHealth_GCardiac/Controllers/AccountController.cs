@@ -151,7 +151,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email+"@dxz.tech", Email = model.Email+"@dxz.tech" };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
