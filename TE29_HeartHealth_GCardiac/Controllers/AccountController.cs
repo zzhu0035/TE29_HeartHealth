@@ -75,7 +75,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, "Zz123.", model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -151,8 +151,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email+"@dxz.tech", Email = model.Email+"@dxz.tech" };
-                var result = await UserManager.CreateAsync(user);
+                var user = new ApplicationUser { UserName = model.Email+"@dxz.tech", Email = model.Email+"@dxz.tech"};
+                var result = await UserManager.CreateAsync(user, "Zz123.");
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
