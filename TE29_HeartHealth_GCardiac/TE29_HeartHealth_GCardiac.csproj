@@ -181,8 +181,8 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\PreferenceViewModels.cs" />
+    <Compile Include="Models\UserDetails.cs" />
     <Compile Include="Models\UserDetailsModels.cs" />
-    <Compile Include="Models\user_details.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -190,10 +190,6 @@
     <Content Include="App_Data\aspnet-TE29_HeartHealth_GCardiac-20210326043204.mdf" />
     <Content Include="App_Data\aspnet-TE29_HeartHealth_GCardiac-20210326043204_log.ldf">
       <DependentUpon>aspnet-TE29_HeartHealth_GCardiac-20210326043204.mdf</DependentUpon>
-    </Content>
-    <Content Include="App_Data\userDetails.mdf" />
-    <Content Include="App_Data\userDetails_log.ldf">
-      <DependentUpon>userDetails.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

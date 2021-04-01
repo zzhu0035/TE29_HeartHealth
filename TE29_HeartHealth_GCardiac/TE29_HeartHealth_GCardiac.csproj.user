@@ -21,7 +21,7 @@
     <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <NameOfLastUsedPublishProfile>C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\Properties\PublishProfiles\TE29HeartHealthGCardiac20210330161434 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
-    <WebStackScaffolding_DbContextTypeFullName>TE29_HeartHealth_GCardiac.Models.UserDetailsModels</WebStackScaffolding_DbContextTypeFullName>
+    <WebStackScaffolding_DbContextTypeFullName>TE29_HeartHealth_GCardiac.Models.UserDetailsModels1</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
   </PropertyGroup>
   <ProjectExtensions>

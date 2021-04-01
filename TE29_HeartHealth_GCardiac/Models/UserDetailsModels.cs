@@ -8,11 +8,11 @@ namespace TE29_HeartHealth_GCardiac.Models
     public partial class UserDetailsModels : DbContext
     {
         public UserDetailsModels()
-            : base("name=UserDetailsModels")
+            : base("name=UserDetailsModels1")
         {
         }
 
-        public virtual DbSet<user_details> user_details { get; set; }
+        public virtual DbSet<UserDetails> UserDetails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

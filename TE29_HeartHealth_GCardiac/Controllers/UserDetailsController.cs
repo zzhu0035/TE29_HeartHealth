@@ -20,9 +20,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            var user_detail = db.user_details.Where(s => s.UserId ==
-            userId).ToList();
-            return View(user_detail);
+            var userDetails = db.UserDetails.Where(s => s.UserId == userId).ToList();
+            return View(userDetails);
         }
 
         // GET: UserDetails/Details/5
@@ -33,12 +32,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            user_details user_details = db.user_details.Find(id);
-            if (user_details == null)
+            UserDetails userDetails = db.UserDetails.Find(id);
+            if (userDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(user_details);
+            return View(userDetails);
         }
 
         // GET: UserDetails/Create
@@ -54,20 +53,20 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "age,height,weight,heart_rate")] user_details user_details)
+        public ActionResult Create([Bind(Include = "Age,Height,Weight,HeartRate")] UserDetails userDetails)
         {
-            user_details.UserId = User.Identity.GetUserId();
+            userDetails.UserId = User.Identity.GetUserId();
             ModelState.Clear();
-            TryValidateModel(user_details);
+            TryValidateModel(userDetails);
 
             if (ModelState.IsValid)
             {
-                db.user_details.Add(user_details);
+                db.UserDetails.Add(userDetails);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(user_details);
+            return View(userDetails);
         }
 
         // GET: UserDetails/Edit/5
@@ -78,12 +77,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            user_details user_details = db.user_details.Find(id);
-            if (user_details == null)
+            UserDetails userDetails = db.UserDetails.Find(id);
+            if (userDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(user_details);
+            return View(userDetails);
         }
 
         // POST: UserDetails/Edit/5
@@ -92,15 +91,15 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "age,height,weight,heart_rate,UserId")] user_details user_details)
+        public ActionResult Edit([Bind(Include = "Age,Height,Weight,HeartRate,UserId")] UserDetails userDetails)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user_details).State = EntityState.Modified;
+                db.Entry(userDetails).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(user_details);
+            return View(userDetails);
         }
 
         // GET: UserDetails/Delete/5
@@ -111,12 +110,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            user_details user_details = db.user_details.Find(id);
-            if (user_details == null)
+            UserDetails userDetails = db.UserDetails.Find(id);
+            if (userDetails == null)
             {
                 return HttpNotFound();
             }
-            return View(user_details);
+            return View(userDetails);
         }
 
         // POST: UserDetails/Delete/5
@@ -125,8 +124,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            user_details user_details = db.user_details.Find(id);
-            db.user_details.Remove(user_details);
+            UserDetails userDetails = db.UserDetails.Find(id);
+            db.UserDetails.Remove(userDetails);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

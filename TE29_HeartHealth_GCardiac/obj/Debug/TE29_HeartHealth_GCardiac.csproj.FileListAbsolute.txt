@@ -209,7 +209,6 @@ F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Owi
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Owin.Security.OAuth.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Debug\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Debug\TE29_HeartHealth_GCardiac.csproj.CoreCompileInputs.cache
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Debug\TE29_HeartHealth_GCardiac.csproj.CopyComplete
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Debug\TE29_HeartHealth_GCardiac.dll
