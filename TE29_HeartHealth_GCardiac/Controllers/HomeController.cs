@@ -20,9 +20,9 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult FAQ()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "FAQ page.";
 
             return View();
         }

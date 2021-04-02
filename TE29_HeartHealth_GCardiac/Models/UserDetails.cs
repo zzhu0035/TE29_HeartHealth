@@ -19,6 +19,9 @@ namespace TE29_HeartHealth_GCardiac.Models
 
         public int? HeartRate { get; set; }
 
+        [DataType(DataType.DateTime)]
+        public DateTime Date { get; set; }
+
         [Required]
         public string UserId { get; set; }
     }
