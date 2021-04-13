@@ -21,7 +21,17 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userDetails = db.UserDetails.Where(s => s.UserId == userId).ToList();
-            return View(userDetails);
+            if(userDetails.Count == 0)
+            {
+                return View();
+            } else
+            {
+                var maxId = db.UserDetails.Where(s => s.UserId == userId).Select(s => s.Id).Max();
+                var userDetailsList = db.UserDetails.Where(s => s.Id == maxId).ToList();
+                return View(userDetailsList[0]);
+
+            }
+            
         }
 
         // GET: UserDetails/Details/5
@@ -53,9 +63,10 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Age,Height,Weight,HeartRate")] UserDetails userDetails)
+        public ActionResult Create([Bind(Include = "Id,Age,Height,Weight,HeartRate")] UserDetails userDetails)
         {
             userDetails.UserId = User.Identity.GetUserId();
+            userDetails.Date = DateTime.Now;
             ModelState.Clear();
             TryValidateModel(userDetails);
 
@@ -91,14 +102,20 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Age,Height,Weight,HeartRate,UserId")] UserDetails userDetails)
+        public ActionResult Edit([Bind(Include = "Id,Age,Height,Weight,HeartRate")] UserDetails userDetails)
         {
+            userDetails.UserId = User.Identity.GetUserId();
+            userDetails.Date = DateTime.Now;
+            ModelState.Clear();
+            TryValidateModel(userDetails);
+
             if (ModelState.IsValid)
             {
-                db.Entry(userDetails).State = EntityState.Modified;
+                db.UserDetails.Add(userDetails);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(userDetails);
         }
 

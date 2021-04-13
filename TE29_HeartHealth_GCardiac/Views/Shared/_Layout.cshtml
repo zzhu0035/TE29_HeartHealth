@@ -17,14 +17,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-brand">G'Cardiac</p>
+                <p class="navbar-brand" style="height:100%">G'Cardiac</p>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("FamilyPlan", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Recipes", "Index", "Home")</li>
-                    <li>@Html.ActionLink("AIAdvice", "Create", "Preference")</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("FamilyPlan", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Recipes", "Index", "Home")</li>
+                        <li>@Html.ActionLink("AIAdvice", "Create", "Preference")</li>
+                    }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("FAQ", "FAQ", "Home")</li>
                 </ul>
@@ -34,7 +37,6 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
     </div>
 
     @Scripts.Render("~/bundles/jquery")

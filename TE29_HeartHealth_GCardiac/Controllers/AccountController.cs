@@ -79,7 +79,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "UserDetails");
+                    //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -139,7 +140,13 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+            if (!User.Identity.IsAuthenticated)
+            {
+                return View();
+            } else
+            {
+                return RedirectToAction("Index", "UserDetails");
+            }
         }
 
         //
@@ -163,13 +170,20 @@ namespace TE29_HeartHealth_GCardiac.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("RegisterSuccess", "Account");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        //
+        // GET: /Account/RegisterSuccess
+        public ActionResult RegisterSuccess()
+        {
+            return View();
         }
 
         //
@@ -439,7 +453,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                if (error[0] == 'E')
+                {
+                    continue;
+                }
+                var error1 = error.Replace("@dxz.tech", "");
+                ModelState.AddModelError("", error1);
             }
         }
 

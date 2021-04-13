@@ -9,7 +9,7 @@ namespace TE29_HeartHealth_GCardiac.Models
     public class PreferenceViewModels
     {
         [Required]
-        [Display(Name = "If you have any previous medical conditions, select this option")]
+        [Display(Name = "Do you have any previous medical conditions?")]
         public bool MedicalConditions { get; set; }
 
         [Required]
@@ -17,11 +17,7 @@ namespace TE29_HeartHealth_GCardiac.Models
         public String Sports { get; set; }
 
         [Required]
-        [Display(Name = "For each exericse, how much minimum calories you wish to burn (per hour)?")]
-        public int MinCalory { get; set; }
-
-        [Required]
-        [Display(Name = "For each exericse, how much maximum calories you wish to burn (per hour)?")]
-        public int MaxCalory { get; set; }
+        [Display(Name = "Which sport strength do you want?")]
+        public String Strength { get; set; }
     }
 }
