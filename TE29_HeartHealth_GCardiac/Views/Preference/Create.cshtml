@@ -27,27 +27,42 @@
 
         <div class="form-horizontal">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.MedicalConditions, htmlAttributes: new { @class = "control-label row" })
-                <div class="checkbox">
-                    <div class="row">
-                        @Html.RadioButtonFor(model => model.MedicalConditions, 0, new { @id = "StatuesRadio0", @name = "Status", @Checked = "checked" })Yes
-                    </div>
-                    <div class="row">
-                        @Html.RadioButtonFor(model => model.MedicalConditions, 1, new { @id = "StatuesRadio1", @name = "Status" })No
-                    </div>
-                    @Html.ValidationMessageFor(model => model.MedicalConditions, "", new { @class = "text-danger" })
-                </div>
-            </div>
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Sports, htmlAttributes: new { @class = "control-label row" })
                 <div class="checkbox">
                     <div class="row">
-                        @Html.RadioButtonFor(model => model.Sports, 0, new { @id = "TypeAquatics", @name = "SportType", @Checked = "checked" })Aquatics
+                        @Html.RadioButtonFor(model => model.Sports, "All", new { @id = "TypeAll", @name = "SportType", @Checked = "checked" })All
                     </div>
                     <div class="row">
-                        @Html.RadioButtonFor(model => model.Sports, 1, new { @id = "TypeNormal", @name = "SportType" })Normal
+                        @Html.RadioButtonFor(model => model.Sports, "Running", new { @id = "TypeRunning", @name = "SportType" })Running
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Walking", new { @id = "TypeWalking", @name = "SportType" })Walking
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Bicycle", new { @id = "TypeBicycle", @name = "SportType" })Bicycle
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Jump", new { @id = "TypeJump", @name = "SportType" })Jump Rope
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Aquatics", new { @id = "TypeAquatics", @name = "SportType" })Aquatics
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Seaside", new { @id = "TypeSeaside", @name = "SportType" })Seaside Activity
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Ball", new { @id = "TypeBall", @name = "SportType" })Ball
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Taichi", new { @id = "TypeTaichi", @name = "SportType" })Taichi
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Aerobics", new { @id = "TypeAerobics", @name = "SportType" })Aerobics
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Sports, "Family", new { @id = "TypeFamily", @name = "SportType" })Family Activity
                     </div>
                     @Html.ValidationMessageFor(model => model.Sports, "", new { @class = "text-danger" })
                 </div>
@@ -57,13 +72,16 @@
                 @Html.LabelFor(model => model.Strength, htmlAttributes: new { @class = "control-label row" })
                 <div class="checkbox">
                     <div class="row">
-                        @Html.RadioButtonFor(model => model.Strength, 0, new { @id = "Strength0", @name = "Strength", @Checked = "checked" })Hard
+                        @Html.RadioButtonFor(model => model.Strength, "0", new { @id = "Strength0", @name = "Strength", @Checked = "checked" })All
                     </div>
                     <div class="row">
-                        @Html.RadioButtonFor(model => model.Strength, 1, new { @id = "Strength1", @name = "Strength" })Normal
+                        @Html.RadioButtonFor(model => model.Strength, "1", new { @id = "Strength1", @name = "Strength" })Simple
                     </div>
                     <div class="row">
-                        @Html.RadioButtonFor(model => model.Strength, 2, new { @id = "Strength2", @name = "Strength" })Simple
+                        @Html.RadioButtonFor(model => model.Strength, "2", new { @id = "Strength2", @name = "Strength" })Normal
+                    </div>
+                    <div class="row">
+                        @Html.RadioButtonFor(model => model.Strength, "3", new { @id = "Strength3", @name = "Strength" })Hard
                     </div>
                     @Html.ValidationMessageFor(model => model.Strength, "", new { @class = "text-danger" })
                 </div>
@@ -79,5 +97,29 @@
 </div>
 
 <div style="float:left; width:70%">
-    <p style="font-size:30px;color:red">Temporary unrealized</p>
+    @if(Model.exercise == null) { 
+        <p style="font-size:30px;color:red">没东西，在左边选点别的</p>
+    } else {
+        <table class="table">
+            <tr>
+                <th>
+                    Exercise
+                </th>
+                <th>
+                    Carlory
+                </th>
+            </tr>
+            @foreach (var item in Model.exercise) { 
+                <tr>
+                    <td>
+                        @item.Exercises
+                    </td>
+                    <td>
+                        @item.Calories
+                    </td>
+                </tr>
+            }
+        </table>
+        
+    }
 </div>

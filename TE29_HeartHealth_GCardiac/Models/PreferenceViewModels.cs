@@ -8,9 +8,6 @@ namespace TE29_HeartHealth_GCardiac.Models
 {
     public class PreferenceViewModels
     {
-        [Required]
-        [Display(Name = "Do you have any previous medical conditions?")]
-        public bool MedicalConditions { get; set; }
 
         [Required]
         [Display(Name = "Which type of sports do you prefer?")]
@@ -19,5 +16,7 @@ namespace TE29_HeartHealth_GCardiac.Models
         [Required]
         [Display(Name = "Which sport strength do you want?")]
         public String Strength { get; set; }
+
+        public List<ExerciseModel> exercise { get; set; }
     }
 }
