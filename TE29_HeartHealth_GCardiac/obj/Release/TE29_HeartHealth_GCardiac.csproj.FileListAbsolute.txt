@@ -216,3 +216,5 @@ F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.dll
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.xml
+C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.dll
+C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.xml
