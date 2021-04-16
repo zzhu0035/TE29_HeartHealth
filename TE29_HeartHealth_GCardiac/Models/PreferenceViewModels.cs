@@ -10,11 +10,11 @@ namespace TE29_HeartHealth_GCardiac.Models
     {
 
         [Required]
-        [Display(Name = "Which type of sports do you prefer?")]
+        [Display(Name = "Which type of exericses do you prefer?")]
         public String Sports { get; set; }
 
         [Required]
-        [Display(Name = "Which sport strength do you want?")]
+        [Display(Name = "Which exericses strength do you want?")]
         public String Strength { get; set; }
 
         public List<ExerciseModel> exercise { get; set; }
