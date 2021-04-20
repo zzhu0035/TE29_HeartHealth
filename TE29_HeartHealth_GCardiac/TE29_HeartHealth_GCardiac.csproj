@@ -214,7 +214,7 @@
     <Content Include="img\ini_background.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\TE29HeartHealthGCardiac20210330161434 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\gcardiac - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

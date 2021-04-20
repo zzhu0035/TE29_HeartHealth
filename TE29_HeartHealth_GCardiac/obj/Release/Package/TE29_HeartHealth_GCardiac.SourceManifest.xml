@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" />
-  <setAcl path="F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
-  <setAcl path="F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
+  <IisApp path="C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\Package\PackageTmp\App_Data" setAclResourceType="Directory" setAclAccess="Write" />
 </sitemanifest>

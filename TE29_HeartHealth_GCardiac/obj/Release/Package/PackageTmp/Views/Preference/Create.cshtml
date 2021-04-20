@@ -61,9 +61,6 @@
                     <div class="row">
                         @Html.RadioButtonFor(model => model.Sports, "Aerobics", new { @id = "TypeAerobics", @name = "SportType" })Aerobics
                     </div>
-                    <div class="row">
-                        @Html.RadioButtonFor(model => model.Sports, "Family", new { @id = "TypeFamily", @name = "SportType" })Family Activity
-                    </div>
                     @Html.ValidationMessageFor(model => model.Sports, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -106,7 +103,7 @@
                     Exercise
                 </th>
                 <th>
-                    Carlory
+                    Carlories
                 </th>
                 <th></th>
             </tr>
