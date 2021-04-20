@@ -267,10 +267,10 @@
     <Content Include="Views\Home\FAQ.cshtml" />
     <Content Include="Views\Preference\Create.cshtml" />
     <Content Include="Views\UserDetails\Create.cshtml" />
-    <Content Include="Views\UserDetails\Delete.cshtml" />
     <Content Include="Views\UserDetails\Index.cshtml" />
     <Content Include="Views\Account\RegisterSuccess.cshtml" />
     <Content Include="Views\UserDetails\Edit.cshtml" />
+    <Content Include="Views\UserDetails\_Main.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

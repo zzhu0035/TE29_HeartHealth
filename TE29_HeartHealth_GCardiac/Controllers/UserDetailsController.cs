@@ -119,32 +119,11 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             return View(userDetails);
         }
 
-        // GET: UserDetails/Delete/5
+        // GET: UserDetails/Main
         [Authorize]
-        public ActionResult Delete(int? id)
+        public ActionResult Main()
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            UserDetails userDetails = db.UserDetails.Find(id);
-            if (userDetails == null)
-            {
-                return HttpNotFound();
-            }
-            return View(userDetails);
-        }
-
-        // POST: UserDetails/Delete/5
-        [Authorize]
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            UserDetails userDetails = db.UserDetails.Find(id);
-            db.UserDetails.Remove(userDetails);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            return View();
         }
 
         protected override void Dispose(bool disposing)

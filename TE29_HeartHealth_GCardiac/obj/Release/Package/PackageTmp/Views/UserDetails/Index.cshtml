@@ -2,10 +2,10 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/UserDetails/_Main.cshtml";
 }
 
-<h2>Personal Details</h2>
+<h2>Profile</h2>
 @if (Model == null)
 {
     <p>
@@ -14,41 +14,41 @@
 }
 else
 {
-    <p>
+@*    <p>
         @Html.ActionLink("Update Information", "Edit", new { id = Model.Id })
-    </p>
+    </p>*@
     <p>
         @Html.ActionLink("Click to get exercise recommendation", "Create", "Preference")
     </p>
     <div class="row" style="font-size:25px">
-        <div class="col-md-3">
+        <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Age)
         </div>
-        <div class="col-md-4">
+        <div class="col-md-7">
             @Html.DisplayFor(model => model.Age)
         </div>
     </div>
     <div class="row" style="font-size:25px">
-        <div class="col-md-3">
+        <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Height)
         </div>
-        <div class="col-md-4">
+        <div class="col-md-7">
             @Html.DisplayFor(model => model.Height)
         </div>
     </div>
     <div class="row" style="font-size:25px">
-        <div class="col-md-3">
+        <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Weight)
         </div>
-        <div class="col-md-4">
+        <div class="col-md-7">
             @Html.DisplayFor(model => model.Weight)
         </div>
     </div>
     <div class="row" style="font-size:25px">
-        <div class="col-md-3">
+        <div class="col-md-5">
             @Html.DisplayNameFor(model => model.HeartRate)
         </div>
-        <div class="col-md-4">
+        <div class="col-md-7">
             @Html.DisplayFor(model => model.HeartRate)
         </div>
     </div>

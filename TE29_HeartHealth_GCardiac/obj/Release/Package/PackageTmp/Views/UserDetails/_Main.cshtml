@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="float:left; width:20%; margin-top:50px">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="~/UserDetails/Index" >Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">LinkAccount</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">SecretReward</a>
+        </li>
+    </ul>
+</div>
+<div style="float:left; width:80%">
+    @RenderBody()
+</div>
