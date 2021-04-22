@@ -17,7 +17,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         private float weight;
 
         // GET: Preference/Create
-        public ActionResult Create()
+        public ActionResult Create(String type)
         {
             userId = User.Identity.GetUserId();
             if (db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
