@@ -68,5 +68,22 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             preferenceViewModel.exercise = info.ToObject<List<ExerciseModel>>();
             return View(preferenceViewModel);
         }
+
+        [HttpPost]
+        public ActionResult MakePlan()
+        {
+            string[] exericseStr = Request.Form.GetValues("Exercises");
+            List<string> list = new List<string>();
+            list.Add("None");
+            foreach(string str in exericseStr)
+            {
+                if (!str.Equals("false"))
+                {
+                    list.Add(str);
+                }
+            }
+            TempData["exeList"] = list;
+            return RedirectToAction("MakePlan", "Plan");
+        }
     }
 }

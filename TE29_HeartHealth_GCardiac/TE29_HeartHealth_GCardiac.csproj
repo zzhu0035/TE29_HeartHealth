@@ -273,6 +273,7 @@
     <Content Include="Views\UserDetails\Edit.cshtml" />
     <Content Include="Views\UserDetails\_Main.cshtml" />
     <Content Include="Views\Plan\Index.cshtml" />
+    <Content Include="Views\Plan\MakePlan.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

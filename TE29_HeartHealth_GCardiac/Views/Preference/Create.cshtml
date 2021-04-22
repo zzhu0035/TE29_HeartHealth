@@ -21,7 +21,7 @@
 
 <div style="float:left; width:30%">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Create", "Preference", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
@@ -97,30 +97,32 @@
     @if(Model.exercise == null) { 
         @*<p style="font-size:30px;color:red">没东西，在左边选点别的</p>*@
     } else {
-        <table class="table">
-            <tr>
-                <th>
-                    Exercise
-                </th>
-                <th>
-                    Carlories
-                </th>
-                <th></th>
-            </tr>
-            @foreach (var item in Model.exercise) { 
+        using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post)) { 
+            <input type="submit" value="Make Plan" class="btn btn-default" />
+            <table class="table">
                 <tr>
-                    <td>
-                        @item.Exercises
-                    </td>
-                    <td>
-                        @item.Calories
-                    </td>
-                    <td>
-                        @Html.CheckBox(item.Exercises, false)
-                    </td>
+                    <th>
+                        Exercise
+                    </th>
+                    <th>
+                        Carlories
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </table>
-        
+                @foreach (var item in Model.exercise) { 
+                    <tr>
+                        <td>
+                            @item.Exercises
+                        </td>
+                        <td>
+                            @item.Calories
+                        </td>
+                        <td>
+                            @Html.CheckBox("Exercises", false, new { value = item.Exercises})
+                        </td>
+                    </tr>
+                }
+            </table>    
+        }
     }
 </div>

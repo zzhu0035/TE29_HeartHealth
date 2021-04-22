@@ -13,5 +13,17 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         {
             return View();
         }
+
+        // GET: Plan/MakePlan
+        public ActionResult MakePlan()
+        {
+            List<string> list = (List<string>)TempData["exeList"];
+            if (list == null)
+            {
+                return RedirectToAction("Create", "Preference");
+            }
+            ViewBag.dropDownList = list;
+            return View();
+        }
     }
 }
