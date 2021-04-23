@@ -18,7 +18,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         public ActionResult MakePlan()
         {
             List<string> list = (List<string>)TempData["exeList"];
-            if (list == null)
+            if (list.Count == 1)
             {
                 return RedirectToAction("Create", "Preference");
             }
