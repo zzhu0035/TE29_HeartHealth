@@ -211,8 +211,11 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="img\advice_background.jpg" />
+    <Content Include="img\Family.png" />
     <Content Include="img\home_background.jpg" />
     <Content Include="img\ini_background.jpg" />
+    <Content Include="img\Input_profile_background.jpg" />
+    <Content Include="img\Person.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\gcardiac - Web Deploy.pubxml" />

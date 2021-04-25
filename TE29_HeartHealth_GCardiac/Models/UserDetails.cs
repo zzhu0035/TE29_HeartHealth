@@ -23,7 +23,7 @@ namespace TE29_HeartHealth_GCardiac.Models
         [Range(30, 200, ErrorMessage = "Please enter a number between 30 and 200.")]
         public int Weight { get; set; }
 
-        [Display(Name = "HeartRate(times/min)")]
+        [Display(Name = "HeartRate\n(times/min)")]
         [Range(50, 150, ErrorMessage = "Please enter a number between 50 and 150.")]
         public int? HeartRate { get; set; }
 

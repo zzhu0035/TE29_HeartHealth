@@ -14,13 +14,10 @@
 }
 else
 {
-@*    <p>
-        @Html.ActionLink("Update Information", "Edit", new { id = Model.Id })
-    </p>*@
-    <p>
-        @Html.ActionLink("Click to start customizing your plan", "Index", "Plan")
-    </p>
-    <div class="row" style="font-size:25px">
+    @*    <p>
+            @Html.ActionLink("Update Information", "Edit", new { id = Model.Id })
+        </p>*@
+    <div class="row" style="font-size:20px">
         <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Age)
         </div>
@@ -28,7 +25,7 @@ else
             @Html.DisplayFor(model => model.Age)
         </div>
     </div>
-    <div class="row" style="font-size:25px">
+    <div class="row" style="font-size:20px;margin-top:10px">
         <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Height)
         </div>
@@ -36,7 +33,7 @@ else
             @Html.DisplayFor(model => model.Height)
         </div>
     </div>
-    <div class="row" style="font-size:25px">
+    <div class="row" style="font-size:20px;margin-top:10px">
         <div class="col-md-5">
             @Html.DisplayNameFor(model => model.Weight)
         </div>
@@ -44,7 +41,7 @@ else
             @Html.DisplayFor(model => model.Weight)
         </div>
     </div>
-    <div class="row" style="font-size:25px">
+    <div class="row" style="font-size:20px;margin-top:10px">
         <div class="col-md-5">
             @Html.DisplayNameFor(model => model.HeartRate)
         </div>
@@ -58,6 +55,9 @@ else
             @Html.DisplayFor(model => model.Date)
         </div>
     </div>
+    <p class="btn btn-default" style="margin-top:40px; margin-left:30px; color:dodgerblue">
+        @Html.ActionLink("Start customizing your plan", "Index", "Plan")
+    </p>
 }
 
 
