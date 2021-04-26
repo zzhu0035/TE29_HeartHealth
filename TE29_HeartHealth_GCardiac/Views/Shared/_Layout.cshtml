@@ -4,10 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - G'Cardiac</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .brand_logo {
+            margin-top: 10px;
+        }
+        .body-content {
+            flex: 1 0 auto;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            flex: 0 0 auto;
+        }
+
+        footer {
+            height: 200px;
+            background:white;
+            flex: 0 0 auto;
+        }
+        .footer_main {
+            font-size: 25;
+            font-weight: bold;
+            text-align: center;
+        }
+        .footer_copyright {
+            text-align: center;
+        }
+    </style>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -17,7 +54,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <p class="navbar-brand" style="height:100%">G'Cardiac</p>
+                <div class="brand_logo">
+                    <img src="~/img/4.G'cardiac.png" />
+                </div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -44,4 +83,46 @@
     @RenderSection("scripts", required: false)
     @RenderSection("css", required: false)
 </body>
+
+<footer class="layout_footer"">
+    <div class="container">
+        <div class="footer_main">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="footer_home">
+                    <a href="/Home/Index"><img src="~/img/1.Quick Links icon.png" style="width:100px;height:100px;" /></a>
+                    <p>Home</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="footer_about">
+                    <a href="/Home/About"><img src="~/img/1.About G'Cardiac icon.png" style="width:100px;height:100px;" /></a>
+                    <p>About</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="footer_FAQ">
+                    <a href="/Home/FAQ"><img src="~/img/1.FAQ icon.png" style="width:100px;height:100px;" /></a>
+                    <p>FAQ</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="footer_contact">
+                    <img src="~/img/1.Contact icon.png" style="width:100px;height:100px;" />
+                    <p>Contact</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_copyright">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="copyright_text">
+                        <p>
+                            Copyright 2021-2022 TE29 DXZ Tech  All Right Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
