@@ -97,8 +97,13 @@
     @if(Model.exercise == null) { 
         @*<p style="font-size:30px;color:red">choose</p>*@
     } else {
-        using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post)) { 
-            <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+        using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post)) {
+            if (User.Identity.IsAuthenticated)
+            { 
+                <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+            } else { 
+                <a href="~/Account/Login">Login to make your plan</a>
+            }
             <table class="table" style="margin-top:10px">
                 <tr>
                     <th>
@@ -123,7 +128,12 @@
                     </tr>
                 }
             </table>    
-            <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+            if (User.Identity.IsAuthenticated)
+            { 
+                <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+            } else { 
+                <a href="~/Account/Login">Login to make your plan</a>
+            }
         }
     }
 </div>
