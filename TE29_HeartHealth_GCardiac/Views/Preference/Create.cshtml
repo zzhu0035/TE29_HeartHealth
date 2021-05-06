@@ -86,7 +86,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
+                    <input type="submit" value="Get exercises" class="btn btn-default" />
                 </div>
             </div>
         </div>
@@ -99,8 +99,12 @@
     } else {
         using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post)) {
             if (User.Identity.IsAuthenticated)
-            { 
+            {
+                if (ViewBag.profile == 0) { 
+                    <a href="~/UserDetails/Index">Please create your profile first! </a><p>(We need your weight to give recommendations)</p>
+                } else { 
                 <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+                }
             } else { 
                 <a href="~/Account/Login">Login to make your plan</a>
             }
@@ -130,7 +134,11 @@
             </table>    
             if (User.Identity.IsAuthenticated)
             { 
+                if (ViewBag.profile == 0) { 
+                    <a href="~/UserDetails/Index">Please create your profile first! </a><p>(We need your weight to give recommendations)</p>
+                } else { 
                 <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+                }
             } else { 
                 <a href="~/Account/Login">Login to make your plan</a>
             }

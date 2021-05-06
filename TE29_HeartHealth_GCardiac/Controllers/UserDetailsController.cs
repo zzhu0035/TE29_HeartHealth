@@ -17,8 +17,15 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 
         // GET: UserDetails
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(int? profile)
         {
+            if (profile == 0)
+            {
+                ViewBag.profile = 0;
+            } else
+            {
+                ViewBag.profile = 1;
+            }
             var userId = User.Identity.GetUserId();
             var userDetails = db.UserDetails.Where(s => s.UserId == userId).ToList();
             if(userDetails.Count == 0)

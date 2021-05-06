@@ -9,14 +9,17 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             display: flex;
             flex-direction: column;
             height: 100%;
         }
+
         .brand_logo {
             margin-top: 10px;
         }
+
         .body-content {
             flex: 1 0 auto;
         }
@@ -29,21 +32,26 @@
 
         footer {
             height: 200px;
-            background:white;
+            background: white;
             flex: 0 0 auto;
-            margin-bottom:-50px;
+            margin-bottom: -50px;
         }
+
         .footer_main {
             font-size: 25;
             font-weight: bold;
             text-align: center;
         }
+
         .footer_copyright {
             text-align: center;
         }
     </style>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/notify.min.js"></script>
 </head>
 
 <body>
@@ -65,7 +73,7 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         @*<li>@Html.ActionLink("FamilyPlan", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Recipes", "Index", "Home")</li>*@
+                            <li>@Html.ActionLink("Recipes", "Index", "Home")</li>*@
                     }
                     <li>@Html.ActionLink("AIAdvice", "Create", "Preference")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
@@ -79,13 +87,11 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
     @RenderSection("css", required: false)
 </body>
 
-<footer class="layout_footer"">
+<footer class="layout_footer">
     <div class="container">
         <div class="footer_main">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">

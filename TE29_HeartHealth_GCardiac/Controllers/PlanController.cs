@@ -10,14 +10,13 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 {
     public class PlanController : Controller
     {
-        private FamilyModel db = new FamilyModel();
-        private UserDetailsModels db1 = new UserDetailsModels();
+        private UserDetailsModels db = new UserDetailsModels();
 
         // GET: Plan
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
-            var id = db1.UserDetails.Where(s => s.UserId == userId).Select(s => s.Id).First();
+            var id = db.UserDetails.Where(s => s.UserId == userId).Select(s => s.Id).First();
             if (db.FamilyMember.Where(s => s.UserId == id).Count() > 0)
             {
                 return View();
@@ -33,7 +32,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             List<string> list = (List<string>)TempData["exeList"];
             if (list.Count == 1)
             {
-                return RedirectToAction("Create", "Preference");
+                return RedirectToAction("Create", "Preference", new { choise = 0 });
             }
             ViewBag.dropDownList = list;
             return View();

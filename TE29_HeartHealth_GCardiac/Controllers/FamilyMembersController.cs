@@ -13,8 +13,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 {
     public class FamilyMembersController : Controller
     {
-        private FamilyModel db = new FamilyModel();
-        private UserDetailsModels db1 = new UserDetailsModels();
+        private UserDetailsModels db = new UserDetailsModels();
 
         // GET: FamilyMembers
         public ActionResult Index()
@@ -51,7 +50,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         public ActionResult Create([Bind(Include = "Id,Age,Height,Weight,HeartRate")] FamilyMember familyMember)
         {
             var userId = User.Identity.GetUserId();
-            familyMember.UserId = db1.UserDetails.Where(s => s.UserId == userId).Select(s=>s.Id).First();
+            familyMember.UserId = db.UserDetails.Where(s => s.UserId == userId).Select(s=>s.Id).First();
             familyMember.Date = DateTime.Now;
             if (ModelState.IsValid)
             {

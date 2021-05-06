@@ -19,15 +19,13 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         private float weight;
 
         // GET: Preference/Create
-        public ActionResult Create(String type)
+        public ActionResult Create(int? choise)
         {
-            test();
-            userId = User.Identity.GetUserId();
-/*            if (db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
+            if (db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
             {
-                // 要加新建文档的弹窗
-                return RedirectToAction("Index", "UserDetails");
-            }*/
+                ViewBag.profile = 0;
+            }
+            userId = User.Identity.GetUserId();
             var requestUrl = "recommend?weight_sel=80&sport_sel=All&diff_sel=0";
             var MOCK_BASE_URL = "http://data.gcardiac.tech:8500/";
 
@@ -54,6 +52,10 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             if(User.Identity.IsAuthenticated)
             {
                 userId = User.Identity.GetUserId();
+                if(db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
+                {
+                    return RedirectToAction("Index", "UserDetails", new { profile=0 });
+                }
                 maxId = db.UserDetails.Where(s => s.UserId == userId).Select(s => s.Id).Max();
                 weight = db.UserDetails.Where(s => s.Id == maxId).Select(s => s.Weight).First();
             } else
@@ -93,29 +95,6 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             }
             TempData["exeList"] = list;
             return RedirectToAction("MakePlan", "Plan");
-        }
-
-        public void test()
-        {
-            Process p = new Process();
-            var path = Server.MapPath("~/") + @"Python\\prediction.py";
-            p.StartInfo.FileName = @"F:\python3\Python37\python.exe";
-            //string args = path + " 48 1 1 140 290 1 1 140 1 0 0 0 1";
-            p.StartInfo.Arguments = path;
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.RedirectStandardOutput = true;
-            p.StartInfo.RedirectStandardInput = true;
-            p.StartInfo.RedirectStandardError = true;
-            p.StartInfo.CreateNoWindow = true;
-            using (System.Diagnostics.Process process = System.Diagnostics.Process.Start(p.StartInfo))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
-                    string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
-                    Console.WriteLine(result);
-                }
-            }
         }
     }
 }
