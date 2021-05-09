@@ -13,6 +13,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         private UserDetailsModels db = new UserDetailsModels();
 
         // GET: Plan
+        [Authorize]
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
@@ -24,18 +25,6 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             {
                 return RedirectToAction("Create", "Preference", new { type = "person" });
             }
-        }
-
-        // GET: Plan/MakePlan
-        public ActionResult MakePlan()
-        {
-            List<string> list = (List<string>)TempData["exeList"];
-            if (list.Count == 1)
-            {
-                return RedirectToAction("Create", "Preference", new { choise = 0 });
-            }
-            ViewBag.dropDownList = list;
-            return View();
         }
     }
 }

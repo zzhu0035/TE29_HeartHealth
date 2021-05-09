@@ -8,6 +8,7 @@ namespace TE29_HeartHealth_GCardiac.Models
 
     public partial class Plans
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]

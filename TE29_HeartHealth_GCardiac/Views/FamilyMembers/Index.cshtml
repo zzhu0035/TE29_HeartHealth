@@ -5,9 +5,7 @@
     Layout = "~/Views/UserDetails/_Main.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
+<p style="margin-top:10px">
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -23,12 +21,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.HeartRate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
         </th>
         <th></th>
     </tr>
@@ -48,13 +40,6 @@
             @Html.DisplayFor(modelItem => item.HeartRate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>

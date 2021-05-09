@@ -94,18 +94,27 @@
 </div>
 
 <div style="float:left; width:70%">
-    @if(Model.exercise == null) { 
+    @if (Model.exercise == null)
+    {
         @*<p style="font-size:30px;color:red">choose</p>*@
-    } else {
-        using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post)) {
+    }
+    else
+    {
+        using (Html.BeginForm("MakePlan", "Preference", FormMethod.Post))
+        {
             if (User.Identity.IsAuthenticated)
             {
-                if (ViewBag.profile == 0) { 
+                if (ViewBag.profile == 0)
+                {
                     <a href="~/UserDetails/Index">Please create your profile first! </a><p>(We need your weight to give recommendations)</p>
-                } else { 
-                <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
                 }
-            } else { 
+                else
+                {
+                    <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+                }
+            }
+            else
+            {
                 <a href="~/Account/Login">Login to make your plan</a>
             }
             <table class="table" style="margin-top:10px">
@@ -118,7 +127,8 @@
                     </th>
                     <th></th>
                 </tr>
-                @foreach (var item in Model.exercise) { 
+                @foreach (var item in Model.exercise)
+                {
                     <tr>
                         <td>
                             @item.Exercises
@@ -127,21 +137,35 @@
                             @item.Calories
                         </td>
                         <td>
-                            @Html.CheckBox("Exercises", false, new { value = item.Exercises})
+                            @Html.CheckBox("Exercises", false, new { value = item.Exercises })
                         </td>
                     </tr>
                 }
-            </table>    
+            </table>
             if (User.Identity.IsAuthenticated)
-            { 
-                if (ViewBag.profile == 0) { 
+            {
+                if (ViewBag.profile == 0)
+                {
                     <a href="~/UserDetails/Index">Please create your profile first! </a><p>(We need your weight to give recommendations)</p>
-                } else { 
-                <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
                 }
-            } else { 
+                else
+                {
+                    <input type="submit" value="Make Plan" class="btn btn-default" style="font-size:18px" />
+                }
+            }
+            else
+            {
                 <a href="~/Account/Login">Login to make your plan</a>
             }
         }
     }
 </div>
+
+@section Scripts {
+    @if (ViewBag.choise == 0)
+    {
+        <script>
+		    alert("Please choose at least one exercise!");
+        </script>
+    }
+}

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "RegisterSuccess";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css{
+    <style>
+        body {
+            background-image: url("../../img/registerSuccess.jpg");
+            background-size: cover;
+            background-position: center top;
+            display: flex;
+        }
+    </style>
+}
+<p class="text-center" style="font-size:20px; margin-top:280px; font-weight:bolder">
+    Your G'Cardiac account has been created.
+</p>
+<p class="text-center" style="font-size:20px; margin-top:20px; font-weight:bolder">
+    Click Button below to edit your profile.
+</p>
+<div class="text-center row" style="margin-top:40px">
+    <a href="~/UserDetails/Create" class="btn btn-default" style="font-size:20px;width:200px">Edit Profile</a>
+</div>
+<div class="text-center row">
+    <a href="~/Home/Index" class="btn btn-default" style="font-size:20px;margin-top:10px;width:200px">Back to Home</a>
+</div>

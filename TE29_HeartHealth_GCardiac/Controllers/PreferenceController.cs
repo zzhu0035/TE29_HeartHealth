@@ -21,11 +21,15 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         // GET: Preference/Create
         public ActionResult Create(int? choise)
         {
+            if(choise == 0)
+            {
+                ViewBag.choise = 0;
+            }
+            userId = User.Identity.GetUserId();
             if (db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
             {
                 ViewBag.profile = 0;
             }
-            userId = User.Identity.GetUserId();
             var requestUrl = "recommend?weight_sel=80&sport_sel=All&diff_sel=0";
             var MOCK_BASE_URL = "http://data.gcardiac.tech:8500/";
 
@@ -84,17 +88,21 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         public ActionResult MakePlan()
         {
             string[] exericseStr = Request.Form.GetValues("Exercises");
-            List<string> list = new List<string>();
-            list.Add("None");
+            List<object> list = new List<object>();
             foreach(string str in exericseStr)
             {
                 if (!str.Equals("false"))
                 {
-                    list.Add(str);
+                    list.Add(new { Value = str, Text = str });
                 }
             }
+            if (list.Count == 0)
+            {
+                return RedirectToAction("Create", new { choise = 0 });
+            }
             TempData["exeList"] = list;
-            return RedirectToAction("MakePlan", "Plan");
+            return RedirectToAction("Index", "Plans");
+            //return RedirectToAction("MakePlan", "Plan");
         }
     }
 }
