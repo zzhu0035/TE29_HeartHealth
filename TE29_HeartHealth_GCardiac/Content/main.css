@@ -192,8 +192,8 @@ p {
   padding-top: 195px;
   padding-bottom: 195px;
   border-bottom: 4px solid #69b9ff;
-  background-image: url('~/img/3.-How-to-Boost-Your-Weight-Loss--scaled.jpg');
-  background-position: 50% 50%;
+  background-image: url('../img/3.-How-to-Boost-Your-Weight-Loss--scaled.jpg');
+
   background-size: cover;
   color: transparent;
   text-align: center;
@@ -203,7 +203,7 @@ p {
   margin-bottom: 30px;
   padding-top: 0px;
   padding-bottom: 260px;
-  background-image: url('~/img/logo_transparent.png');
+  background-image: url('../img/logo_transparent.png');
   background-position: 50% 50%;
   background-size: cover;
   color: #fff;
@@ -258,7 +258,7 @@ p {
 }
 
 .section-heading.centered {
-  background-image: url('~/img/faq.jpeg');
+  background-image: url('../img/faq.jpeg');
   background-position: 0% 0%;
   background-size: cover;
   color: #676770;
@@ -330,7 +330,7 @@ p {
   border: 10px solid #fff;
   border-radius: 50%;
   background-color: #69b9ff;
-  background-image: url('~/img/medal.png');
+  background-image: url('../img/medal.png');
   background-position: 0px 0px;
   background-size: auto;
   box-shadow: 0 0 0 1px #2e9dff;
@@ -396,7 +396,7 @@ p {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-image: url('/img/obesityDiabCardioDisease-861999778-770x553.jpeg');
+  background-image: url('../img/obesityDiabCardioDisease-861999778-770x553.jpeg');
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -522,7 +522,7 @@ p {
   -ms-flex: 0 0.5 auto;
   flex: 0 0.5 auto;
   background-color: transparent;
-  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg'), url('~/img/What-is-obesity1.jpeg');
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg'), url('../img/What-is-obesity1.jpeg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   -o-object-fit: cover;
