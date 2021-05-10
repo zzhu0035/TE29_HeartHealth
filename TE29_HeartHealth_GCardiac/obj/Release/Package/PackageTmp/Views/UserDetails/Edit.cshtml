@@ -1,0 +1,48 @@
+﻿@model TE29_HeartHealth_GCardiac.Models.UserDetails
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/UserDetails/_Main.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section id="contact-form" class="edit-profile">
+        <div class="w-container">
+            <h2 class="heading"><strong>Edit your personal profile</strong></h2>
+            <p class="paragraph-4">Please input your profile to obtain your own exercise plan</p>
+            <div id="formInstructions" class="small-text"><em class="italic-text-2">Fields marked with an asterisk (*) are required.</em></div>
+            <div class="w-form">
+                <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form" class="form-3">
+                    <div class="contact-form-grid">
+                        <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd534550a-e3550bb9">
+                            <label for="First-Name" id="contact-first-name">Age *</label>
+                            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                        </div>
+                        <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd534550e-e3550bb9">
+                            <label for="Last-Name" id="contact-last-name">Height (cm) *</label>
+                            @Html.EditorFor(model => model.Height, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
+                        </div>
+                        <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd5345512-e3550bb9">
+                            <label for="Email" id="contact-email" >Weight (kg) *</label>
+                            @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
+                        </div>
+                        <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd5345516-e3550bb9">
+                            <label for="Contact-Phone-Number" id="contact-phone">Heart Rate (times/min)</label>
+                            @Html.EditorFor(model => model.HeartRate, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.HeartRate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button">
+                </form>
+            </div>
+    </section>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

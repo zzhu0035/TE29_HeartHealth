@@ -1,0 +1,141 @@
+﻿@model TE29_HeartHealth_GCardiac.Models.Prediction
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/UserDetails/_Main.cshtml";
+}
+
+<h2>Heart Disease Prediction</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.sex, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.sex, 1, new { @id = "Sexradio1", @name = "Sex", @checked = "checked" })male
+                @Html.RadioButtonFor(model => model.sex, 0, new { @id = "Sexradio0", @name = "Sex" })female
+                @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cp, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.cp, 0, new { @id = "Cpradio0", @name = "Cp", @checked = "checked" })typical angina
+                @Html.RadioButtonFor(model => model.cp, 1, new { @id = "Cpradio1", @name = "Cp" })atypical angina
+                @Html.RadioButtonFor(model => model.cp, 2, new { @id = "Cpradio2", @name = "Cp" })non-anginal pain
+                @Html.RadioButtonFor(model => model.cp, 3, new { @id = "Cpradio3", @name = "Cp" })asymptomatic
+                @Html.ValidationMessageFor(model => model.cp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.trestbps, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.trestbps, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.trestbps, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.chol, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.chol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.chol, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fbs, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fbs, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fbs, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.restecg, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.restecg, 0, new { @id = "Restecgradio0", @name = "Restecg", @checked = "checked" })normal
+                @Html.RadioButtonFor(model => model.restecg, 1, new { @id = "Restecgradio1", @name = "Restecg" })having ST-T
+                @Html.RadioButtonFor(model => model.restecg, 2, new { @id = "Restecgradio2", @name = "Restecg" })hypertrophy
+                @Html.ValidationMessageFor(model => model.restecg, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.thalach, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.thalach, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.thalach, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.exang, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.exang, 0, new { @id = "Exangradio0", @name = "Exang", @checked = "checked" })yes
+                @Html.RadioButtonFor(model => model.exang, 1, new { @id = "Exangradio1", @name = "Exang" })no
+                @Html.ValidationMessageFor(model => model.exang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.oldpeak, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.oldpeak, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.oldpeak, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.slope, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.slope, 0, new { @id = "Sloperadio0", @name = "Slope", @checked = "checked" })0
+                @Html.RadioButtonFor(model => model.slope, 1, new { @id = "Sloperadio1", @name = "Slope" })1
+                @Html.RadioButtonFor(model => model.slope, 2, new { @id = "Sloperadio2", @name = "Slope" })2
+                @Html.ValidationMessageFor(model => model.slope, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ca, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.ca, 0, new { @id = "Caradio0", @name = "Ca", @checked = "checked" })0
+                @Html.RadioButtonFor(model => model.ca, 1, new { @id = "Caradio1", @name = "Ca" })1
+                @Html.RadioButtonFor(model => model.ca, 2, new { @id = "Caradio2", @name = "Ca" })2
+                @Html.RadioButtonFor(model => model.ca, 3, new { @id = "Caradio3", @name = "Ca" })3
+                @Html.RadioButtonFor(model => model.ca, 4, new { @id = "Caradio4", @name = "Ca" })4
+                @Html.ValidationMessageFor(model => model.ca, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.thal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.thal, 0, new { @id = "Thalradio0", @name = "Thal", @checked = "checked" })normal
+                @Html.RadioButtonFor(model => model.thal, 1, new { @id = "Thalradio1", @name = "Thal" })fixed defect
+                @Html.RadioButtonFor(model => model.thal, 2, new { @id = "Thalradio2", @name = "Thal" })reversable defect
+                @Html.ValidationMessageFor(model => model.thal, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Predict" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @if (ViewBag.result != null)
+    {
+        <p style="font-size: 26px; line-height: 36px; font-weight:bolder; text-align: center">You have a @ViewBag.result% chance of having a heart disease!</p>
+    }
+</div>
