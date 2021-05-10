@@ -1,21 +1,16 @@
 ﻿@{
     ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-
-@section css{
-    <style>
-        body {
-            background-image: url("../../img/3.About bg pic.jpg");
-            background-size: cover;
-            background-position: center top;
-            display: flex;
-        }
-    </style>
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <body>
-    <p style="font-size:20px; width:100%; margin-top:10px">We are a group of innovative, energetic, motivated people and aiming to contribute our energy to find the solution to ease heart disease. With experienced team members in multiple areas, we are confident in looking forward and producing fantastic production.</p>
-
-    <p style="font-size:20px; width:100%; margin-top:10px">According to the article from Morgan Liotta in 2020, Australia's male and female obesity rates are ranked second in the world and eighth in the world. The Australian Institute of Health and Welfare (AIHW) further found that being overweight brings a series of risks, including heart disease. Thus, the target audience of this product is those people aged between 40 to 50 suffering from obesity. And they have similar characteristics, such as having family members and concerns about personal health. The main purpose of this product is to help this part of the population maintain a healthy lifestyle to relieve the harm caused by obesity, so as to reduce the risk of heart disease in the future.</p>
+    <header id="hero" class="hero">
+        <div class="flex-container w-container">
+            <div>
+                <h1>About</h1>
+                <p class="paragraph-3">We are a group of innovative, energetic, motivated people and aiming to contribute our energy to find the solution to ease heart disease. With experienced team members in multiple areas, we are confident in looking forward and producing fantastic production.According to the article from Morgan Liotta in 2020, Australia&#x27;s male and female obesity rates are ranked second in the world and eighth in the world. <br><br>The Australian Institute of Health and Welfare (AIHW) further found that being overweight brings a series of risks, including heart disease. Thus, the target audience of this product is those people aged between 40 to 50 suffering from obesity. And they have similar characteristics, such as having family members and concerns about personal health. The main purpose of this product is to help this part of the population maintain a healthy lifestyle to relieve the harm caused by obesity, so as to reduce the risk of heart disease in the future.</p>
+            </div><img src="~/img/What-is-obesity1.jpeg" loading="lazy" width="400" height="400" srcset="~/img/What-is-obesity1-p-800.jpeg 800w, ~/img/What-is-obesity1.jpeg 900w" sizes="(max-width: 479px) 84vw, 400px" alt="">
+            <div class="hero-image-mask"></div>
+        </div>
+    </header>
 </body>
