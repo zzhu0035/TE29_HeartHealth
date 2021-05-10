@@ -5,14 +5,13 @@
     Layout = "~/Views/UserDetails/_Main.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Heart Disease Prediction</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Prediction</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -137,6 +136,6 @@
 <div>
     @if (ViewBag.result != null)
     {
-        <p>You have a @ViewBag.result% chance of having a heart disease!</p>
+        <p style="font-size: 26px; line-height: 36px; font-weight:bolder; text-align: center">You have a @ViewBag.result% chance of having a heart disease!</p>
     }
 </div>
