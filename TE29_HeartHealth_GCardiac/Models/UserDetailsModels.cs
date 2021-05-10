@@ -7,6 +7,12 @@ namespace TE29_HeartHealth_GCardiac.Models
 {
     public partial class UserDetailsModels : DbContext
     {
+
+        static UserDetailsModels()
+        {
+            Database.SetInitializer<UserDetailsModels>(null);
+        }
+
         public UserDetailsModels()
             : base("name=UserDetailsModels")
         {

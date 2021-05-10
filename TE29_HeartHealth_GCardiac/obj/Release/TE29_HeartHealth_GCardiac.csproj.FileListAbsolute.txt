@@ -213,7 +213,6 @@ F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.CopyComplete
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.dll
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.pdb
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.dll
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.xml
 C:\Users\zixizhao\Source\Repos\zzhu0035\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\System.Net.Http.Formatting.dll
@@ -342,3 +341,7 @@ F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\IronPython.Wp
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Dynamic.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.Metadata.xml
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate1.resources

@@ -19,10 +19,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            var userId = User.Identity.GetUserId();
+            var plans = db.Plans.Where(p => p.UserId == userId);
             List<object> list = (List<object>)TempData["exeList"];
             ViewBag.exeList = list;
             TempData["exeList"] = list;
-            return View(db.Plans.ToList());
+            return View(plans.ToList());
         }
 
         // GET: Plans/Create

@@ -11,6 +11,8 @@ namespace TE29_HeartHealth_GCardiac.Models
     {
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
         public int Age { get; set; }
 
         public int Height { get; set; }
@@ -21,6 +23,6 @@ namespace TE29_HeartHealth_GCardiac.Models
 
         public DateTime Date { get; set; }
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
     }
 }
