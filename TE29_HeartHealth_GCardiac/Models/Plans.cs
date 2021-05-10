@@ -23,5 +23,8 @@ namespace TE29_HeartHealth_GCardiac.Models
 
         [Required]
         public string UserId { get; set; }
+
+        [Required]
+        public string AssignedUser { get; set; }
     }
 }

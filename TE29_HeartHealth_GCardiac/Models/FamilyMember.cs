@@ -21,6 +21,8 @@ namespace TE29_HeartHealth_GCardiac.Models
 
         public int? HeartRate { get; set; }
 
+        public string SecretReward { get; set; }
+
         public DateTime Date { get; set; }
 
         public string UserId { get; set; }

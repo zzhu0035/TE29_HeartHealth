@@ -25,6 +25,9 @@
         <th>
             @Html.DisplayNameFor(model => model.HeartRate)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecretReward)
+        </th>
         <th></th>
     </tr>
 
@@ -46,6 +49,10 @@
             @Html.DisplayFor(modelItem => item.HeartRate)
         </td>
         <td>
+            <label style = "display:none", id = "secretText">@Html.DisplayFor(modelItem => item.SecretReward)</label>
+            <p id="secret">click to unlock SecretReward!</p>
+        </td>
+        <td>
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
@@ -53,3 +60,13 @@
 }
 
 </table>
+@section Scripts {
+    <script type="text/javascript">
+        var secret = document.getElementById("secret");
+        secret.addEventListener("click", function () {
+            secret.onclick = null;
+            secret.style.display = "none";
+            document.getElementById("secretText").style.display = "";
+        });
+    </script>
+}

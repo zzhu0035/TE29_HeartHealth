@@ -19,9 +19,10 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         private float weight;
 
         // GET: Preference/Create
-        public ActionResult Create(int? choise)
+        public ActionResult Create(int? choise, string type)
         {
-            if(choise == 0)
+            TempData["type"] = type;
+            if (choise == 0)
             {
                 ViewBag.choise = 0;
             }
@@ -53,7 +54,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         public ActionResult Create(PreferenceViewModels preferenceViewModel)
         {
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
                 userId = User.Identity.GetUserId();
                 if(db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
@@ -87,6 +88,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         public ActionResult MakePlan()
         {
+            string type = (string)TempData["type"];
             string[] exericseStr = Request.Form.GetValues("Exercises");
             List<object> list = new List<object>();
             foreach(string str in exericseStr)
@@ -101,7 +103,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
                 return RedirectToAction("Create", new { choise = 0 });
             }
             TempData["exeList"] = list;
-            return RedirectToAction("Index", "Plans");
+            return RedirectToAction("Index", "Plans", new { type = type });
             //return RedirectToAction("MakePlan", "Plan");
         }
     }

@@ -16,6 +16,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         private UserDetailsModels db = new UserDetailsModels();
 
         // GET: FamilyMembers
+        [Authorize]
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
@@ -23,22 +24,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             return View(familyMembers.ToList());
         }
 
-        // GET: FamilyMembers/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            FamilyMember familyMember = db.FamilyMember.Find(id);
-            if (familyMember == null)
-            {
-                return HttpNotFound();
-            }
-            return View(familyMember);
-        }
-
         // GET: FamilyMembers/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -49,7 +36,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Age,Height,Weight,HeartRate")] FamilyMember familyMember)
+        [Authorize]
+        public ActionResult Create([Bind(Include = "Id,Name,Age,Height,Weight,HeartRate,SecretReward")] FamilyMember familyMember)
         {
             var userId = User.Identity.GetUserId();
             familyMember.UserId = userId;
@@ -65,6 +53,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         }
 
         // GET: FamilyMembers/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,7 +73,8 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Age,Height,Weight,HeartRate")] FamilyMember familyMember)
+        [Authorize]
+        public ActionResult Edit([Bind(Include = "Id,Name,Age,Height,Weight,HeartRate,SecretReward")] FamilyMember familyMember)
         {
             familyMember.Date = DateTime.Now;
             if (ModelState.IsValid)
@@ -97,6 +87,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         }
 
         // GET: FamilyMembers/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +105,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         // POST: FamilyMembers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             FamilyMember familyMember = db.FamilyMember.Find(id);

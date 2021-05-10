@@ -14,7 +14,7 @@ namespace TE29_HeartHealth_GCardiac.Models
         }
 
         public UserDetailsModels()
-            : base("name=UserDetailsModels")
+            : base("name=Plans")
         {
         }
 

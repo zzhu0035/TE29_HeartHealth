@@ -17,13 +17,14 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 
         // GET: Plans
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string type)
         {
             var userId = User.Identity.GetUserId();
             var plans = db.Plans.Where(p => p.UserId == userId);
             List<object> list = (List<object>)TempData["exeList"];
             ViewBag.exeList = list;
             TempData["exeList"] = list;
+            TempData["type"] = type;
             return View(plans.ToList());
         }
 
@@ -31,13 +32,28 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            var userId = User.Identity.GetUserId();
+            var userName = User.Identity.GetUserName().Split('@')[0];
             List<object> list = (List<object>)TempData["exeList"];
+            string type = (string)TempData["type"];
+            ViewBag.type = type;
+            if(type == "family")
+            {
+                List<object> familyMembers = new List<object>();
+                familyMembers.Add(new { Value = userName, Text = userName });
+                foreach (FamilyMember members in db.FamilyMember.Where(f => f.UserId == userId).ToList())
+                {
+                    familyMembers.Add(new { Value = members.Name, Text = members.Name });
+                }
+                ViewBag.AssignedUser = new SelectList(familyMembers, "Value", "Text");
+            }
             if (list == null)
             {
                 return RedirectToAction("Create", "Preference");
             }
             ViewBag.Exercise = new SelectList(list, "Value", "Text");
             TempData["exeList"] = list;
+            TempData["type"] = type;
             return View();
         }
 
@@ -47,11 +63,17 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "Id,Exercise,StartTime,EndTime")] Plans plans)
+        public ActionResult Create([Bind(Include = "Id,Exercise,StartTime,EndTime,AssignedUser")] Plans plans)
         {
+            var userId = User.Identity.GetUserId();
             List<object> list = (List<object>)TempData["exeList"];
             TempData["exeList"] = list;
-            var userId = User.Identity.GetUserId();
+            string type = (string)TempData["type"];
+            TempData["type"] = type;
+            if(type != "family")
+            {
+                plans.AssignedUser = User.Identity.GetUserName().Split('@')[0];
+            }
             plans.Calorie = "0";
             plans.UserId = userId;
             ModelState.Clear();
@@ -89,7 +111,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Edit([Bind(Include = "Id,Exercise,Calorie,StartTime,EndTime,UserId")] Plans plans)
+        public ActionResult Edit([Bind(Include = "Id,Exercise,StartTime,EndTime")] Plans plans)
         {
             if (ModelState.IsValid)
             {

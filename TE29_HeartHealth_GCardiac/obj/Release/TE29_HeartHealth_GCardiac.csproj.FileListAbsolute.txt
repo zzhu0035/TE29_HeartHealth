@@ -341,10 +341,6 @@ F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\IronPython.Wp
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Dynamic.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.xml
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.Metadata.xml
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
-F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate1.resources
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\IronPython.dll
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\IronPython.Modules.dll
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\IronPython.SQLite.dll
@@ -362,3 +358,6 @@ D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.Met
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate1.resources
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
+F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csprojAssemblyReference.cache

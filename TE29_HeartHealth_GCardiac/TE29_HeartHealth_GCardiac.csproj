@@ -205,13 +205,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202105100057049_InitialCreate.cs" />
-    <Compile Include="Migrations\202105100057049_InitialCreate.Designer.cs">
-      <DependentUpon>202105100057049_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202105100107060_InitialCreate1.cs" />
-    <Compile Include="Migrations\202105100107060_InitialCreate1.Designer.cs">
-      <DependentUpon>202105100107060_InitialCreate1.cs</DependentUpon>
+    <Compile Include="Migrations\202105101541544_InitialCreate.cs" />
+    <Compile Include="Migrations\202105101541544_InitialCreate.Designer.cs">
+      <DependentUpon>202105101541544_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -336,24 +332,14 @@
     <Content Include="Views\Plan\MakePlan.cshtml" />
     <Content Include="Views\FamilyMembers\Create.cshtml" />
     <Content Include="Views\FamilyMembers\Delete.cshtml" />
-    <Content Include="Views\FamilyMembers\Details.cshtml" />
     <Content Include="Views\FamilyMembers\Edit.cshtml" />
     <Content Include="Views\FamilyMembers\Index.cshtml" />
     <Content Include="Views\Prediction\Create.cshtml" />
     <Content Include="Views\Plans\Create.cshtml" />
     <Content Include="Views\Plans\Delete.cshtml" />
-    <Content Include="Views\Plans\Details.cshtml" />
     <Content Include="Views\Plans\Edit.cshtml" />
     <Content Include="Views\Plans\Index.cshtml" />
     <Content Include="Views\Plans\Generate.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105100057049_InitialCreate.resx">
-      <DependentUpon>202105100057049_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202105100107060_InitialCreate1.resx">
-      <DependentUpon>202105100107060_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -367,6 +353,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105101541544_InitialCreate.resx">
+      <DependentUpon>202105101541544_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
