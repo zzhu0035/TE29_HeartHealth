@@ -22,8 +22,12 @@
             <h1 class="hero-heading"></h1>
             <div class="hero-subheading"><span class="text-span"><strong><em class="italic-text">Wanna lose weight with your family?</em></strong></span></div>
             <div>
-                <a href="/Account/Register" class="button">sign up</a>
-                <a href="/Home/About" class="hollow-button all-caps">Learn more</a>
+                @if (!User.Identity.IsAuthenticated)
+                { 
+                    <a href="/Account/Register" class="button">sign up</a> 
+                }
+                
+                <a href="/Home/About" class="hollow-button all-caps" style="font-weight:bolder">Learn more</a>
             </div>
         </div>
     </div>
