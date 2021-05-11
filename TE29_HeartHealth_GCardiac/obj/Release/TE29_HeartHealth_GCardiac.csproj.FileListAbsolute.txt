@@ -356,7 +356,6 @@ D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\Microsoft.Dynamic.xml
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.xml
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\bin\Microsoft.Scripting.Metadata.xml
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
-D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate1.resources
 D:\Github\TE29_HeartHealth\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.Migrations.InitialCreate.resources
 F:\VS\TE29\TE29_HeartHealth_GCardiac\TE29_HeartHealth_GCardiac\obj\Release\TE29_HeartHealth_GCardiac.csproj.GenerateResource.cache
