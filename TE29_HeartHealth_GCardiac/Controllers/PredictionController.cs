@@ -22,6 +22,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 
         // POST: Prediction/Create
         [HttpPost]
+        [Authorize]
         public ActionResult Create(Prediction prediction)
         {
             //age_value=56&sex_value=0&cp_value=1&trestbps_value=140&chol_value=290&fbs_value=1&rest_ecg_value=1&thalach_value=140&exang_value=1&oldpeak_value=0&slope_value=0&ca_value=0&thal_value=1
@@ -32,20 +33,25 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             {
                 fbs = 1;
             }
-            var requestUrl = "age_value=" + age + 
-                "&sex_value=" + prediction.sex + 
-                "&cp_value=" + prediction.cp + 
-                "&trestbps_value=" + prediction.trestbps + 
-                "&chol_value=" + prediction.chol + 
-                "&fbs_value=" + fbs + 
-                "&rest_ecg_value=" + prediction.restecg + 
-                "&thalach_value=" + prediction.thal + 
-                "&exang_value=" + prediction.exang + 
-                "&oldpeak_value=" + prediction.oldpeak + 
-                "&slope_value=" + prediction.slope + 
+            TryValidateModel(prediction);
+            if (!ModelState.IsValid)
+            {
+                return View(prediction);
+            }
+            var requestUrl = "age_value=" + age +
+                "&sex_value=" + prediction.sex +
+                "&cp_value=" + prediction.cp +
+                "&trestbps_value=" + prediction.trestbps +
+                "&chol_value=" + prediction.chol +
+                "&fbs_value=" + fbs +
+                "&rest_ecg_value=" + prediction.restecg +
+                "&thalach_value=" + prediction.thal +
+                "&exang_value=" + prediction.exang +
+                "&oldpeak_value=" + prediction.oldpeak +
+                "&slope_value=" + prediction.slope +
                 "&ca_value=0&thal_value=" + prediction.ca;
             var MOCK_BASE_URL = "http://128.199.195.38:5000/recommend/";
-            
+
             HttpClientHandler httpClientHandler = new HttpClientHandler()
             {
                 UseCookies = false
@@ -57,7 +63,28 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             var rspn = client.GetAsync(requestUrl).Result;
             rspn.EnsureSuccessStatusCode();
             var info = rspn.Content.ReadAsAsync<dynamic>().Result;
-            ViewBag.result = info["Result"];
+            double result = Convert.ToDouble(info["Result"]);
+            return RedirectToAction("Result", new { result = result });
+        }
+
+        [Authorize]
+        public ActionResult Result(double? result)
+        {
+            if(result == null)
+            {
+                return RedirectToAction("Create");
+            }
+            if(result > 60)
+            {
+                ViewBag.color = "red";
+            } else if (result > 40 && result <= 60)
+            {
+                ViewBag.color = "yellow";
+            } else
+            {
+                ViewBag.color = "green";
+            }
+            ViewBag.result = result;
             return View();
         }
     }

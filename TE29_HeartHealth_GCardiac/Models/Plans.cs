@@ -17,8 +17,12 @@ namespace TE29_HeartHealth_GCardiac.Models
         [Required]
         public string Calorie { get; set; }
 
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss}")]
         public DateTime StartTime { get; set; }
 
+        [Required]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-ddTHH:mm:ss}")]
         public DateTime EndTime { get; set; }
 
         [Required]

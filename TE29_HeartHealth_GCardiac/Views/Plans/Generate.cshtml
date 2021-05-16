@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<TE29_HeartHealth_GCardiac.Models.Plans>
+
 @{
     ViewBag.Title = "Generate";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +7,70 @@
 
 <h2>Generate</h2>
 
+<link href="~/Scripts/fullcalendar/main.css" rel="stylesheet" />
+@section Scripts {
+    <script src="~/Scripts/fullcalendar/main.js"></script>
+    <script>
+        var events = [];
+        $(".events").each(function () {
+            var title = $(".title", this).text().trim();
+            var start = $(".start", this).text().trim();
+            var end = $(".end", this).text().trim();
+            var event = {
+                "title": title,
+                "start": start.replace(' ', 'T').replace('/', '-').replace('/', '-'),
+                "end": end.replace(' ', 'T').replace('/', '-').replace('/', '-')
+            };
+            events.push(event);
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek'
+                },
+                events: events
+            });
+            calendar.render();
+        });
+
+    </script>
+
+}
+@if (ViewBag.planNum == 0)
+{
+    <p>No plan. Please create first!</p>
+}
+<div id='calendar'></div>
+<div style="display: none">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Exercise)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr class="events">
+                <td class="title">
+                    @Html.DisplayFor(modelItem => item.Exercise)
+                </td>
+                <td class="start">
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td class="end">
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

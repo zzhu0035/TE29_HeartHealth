@@ -150,6 +150,18 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
+        public ActionResult Generate()
+        {
+            var userId = User.Identity.GetUserId();
+            var plans = db.Plans.Where(p => p.UserId == userId).ToList();
+            if (plans.Count == 0)
+            {
+                ViewBag.planNum = 0;
+            }
+            return View(plans);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
