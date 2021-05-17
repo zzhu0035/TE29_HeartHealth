@@ -32,5 +32,17 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Login(string userName, string pwd)
+        {
+            if(userName == "te29" && pwd == "te29")
+            {
+                return RedirectToAction("Index");
+            } else
+            {
+                ViewBag.valid = "Invalid username or password!";
+                return View();
+            }
+        }
     }
 }

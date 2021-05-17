@@ -11,6 +11,12 @@
     <title>LOGIN</title>
 </head>
 <body>
+    @if (ViewBag.valid != null)
+    {
+        <script>
+            alert("@ViewBag.valid");
+        </script>
+    }
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center">
