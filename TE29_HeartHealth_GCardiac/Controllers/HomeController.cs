@@ -26,5 +26,11 @@ namespace TE29_HeartHealth_GCardiac.Controllers
 
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
     }
 }

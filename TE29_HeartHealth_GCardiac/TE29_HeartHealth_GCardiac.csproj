@@ -348,6 +348,7 @@
     <Content Include="Views\Plans\Index.cshtml" />
     <Content Include="Views\Plans\Generate.cshtml" />
     <Content Include="Views\Prediction\Result.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
