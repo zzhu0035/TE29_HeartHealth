@@ -17,29 +17,23 @@
             alert("@ViewBag.valid");
         </script>
     }
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center">
-                <h4 class="text-muted font-weight-light mt-1">Sign in to G'Cardiac</h4>
-            </div>
+    <div class="c" style="text-align:center; margin-top:50px ">
+        <div>
+            <h4>Sign in to G'Cardiac</h4>
         </div>
-        <div class="row row-custom">
+        <div>
             <div class="col">
-                <div class="bg-white p-4 mt-3 border rounded">
-                    <form action="/Home/Login" method="post">
-                        <div class="form-group">
-                            <label for="usernameInput" class="text-dark">Username</label>
-                            <input type="text" class="form-control form-control-sm" name="username" id="usernameInput" placeholder="Enter username">
+                <form action="/Home/Login" method="post">
+                    <div class="form">
+                        <label for="usernameInput">Username</label>
+                        <input type="text" name="username" id="usernameInput" placeholder="Enter username">
+                    </div>
+                        <div class="form">
+                            <label for="userpwdInput">Password</label>
+                            <input type="password" name="pwd" id="userpwdInput" placeholder="Password">
                         </div>
-                        <div class="form-group">
-                            <label for="userpwdInput" class="text-dark d-block">
-                                Password
-                            </label>
-                            <input type="password" name="pwd" class="form-control form-control-sm" id="userpwdInput" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn rounded-sm btn-primary-custom btn-block btn-sm text-white mt-4">Sign in</button>
-                    </form>
-                </div>
+                        <button type="submit">Sign in</button>
+                </form>
             </div>
         </div>
     </div>

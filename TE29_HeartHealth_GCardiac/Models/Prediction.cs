@@ -10,12 +10,12 @@ namespace TE29_HeartHealth_GCardiac.Models
     {
         //sex (1 = male; 0 = female)
         [Required]
-        [Display(Name = "sex")]
+        [Display(Name = "sex                ")]
         public int sex { get; set; }
 
         //chest pain type(4 values)
         [Required]
-        [Display(Name = "chest pain type")]
+        [Display(Name = "chest pain type             ")]
         public int cp { get; set; }
 
         //resting blood pressure 94-200
