@@ -79,7 +79,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
                 ViewBag.color = "red";
             } else if (result > 40 && result <= 60)
             {
-                ViewBag.color = "yellow";
+                ViewBag.color = "blue";
             } else
             {
                 ViewBag.color = "green";

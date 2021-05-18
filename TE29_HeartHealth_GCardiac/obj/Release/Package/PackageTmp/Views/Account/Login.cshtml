@@ -23,6 +23,12 @@
         font-weight: 600;
         margin-top: 250px;
     }
+
+    actlink:{ color: white; }
+    actlink:active { color: white; }
+    actlink:link { color: white; }
+
+    
 </style>
 
 
@@ -60,11 +66,7 @@
         <div class="row" style="margin-top:10px; text-align:center">
             <input type="submit" class="w-button" value="Log in" style="text-align:center"/>
         </div>
-        <div class="row">
-            <p class="text-center">
-                @Html.ActionLink("No account? Register now!", "Register")
-            </p>
-        </div>
+
         @* Enable this once you have account confirmation enabled for password reset functionality
             <p>
                 @Html.ActionLink("Forgot your password?", "ForgotPassword")

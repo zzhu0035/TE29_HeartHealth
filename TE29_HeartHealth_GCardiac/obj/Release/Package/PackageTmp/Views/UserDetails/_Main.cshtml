@@ -3,27 +3,36 @@
     ViewBag.Title = "Main";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    body {
+        background-image: url("../img/3.-How-to-Boost-Your-Weight-Loss--scaled.jpg");
+        background-size: cover;
+        background-position: center top;
+        display: flex;
+    }
+</style>
+
 
 <div style="height:100px;width:100%">
     <p></p>
 </div>
-<div style="float:left; width:18%; height:450px; padding-top:2em; border:1px solid black; background-color:white">
+<div style="float:left; width:18%; height:450px; padding-top:2em; border:1px solid black; background-color:white; background: rgba(255,255,255,0.8)">
     <ul class="nav flex-column">
         <li class="nav-item">
-            <a class="nav-link text-center" href="~/UserDetails/Index" style="font-size:20px; color:dodgerblue">Profile</a>
+            <a class="nav-link text-center" href="~/UserDetails/Index" style="font-size:20px; color:dodgerblue; font-weight:bolder">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-center" href="~/FamilyMembers/Index" style="font-size:20px; color:dodgerblue">FamilyMembers</a>
+            <a class="nav-link text-center" href="~/FamilyMembers/Index" style="font-size:20px; color:dodgerblue; font-weight:bolder">Family Members</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-center" href="~/Prediction/Create" style="font-size:20px; color:dodgerblue">Prediction</a>
+            <a class="nav-link text-center" href="~/Prediction/Create" style="font-size:20px; color:dodgerblue; font-weight:bolder">Prediction</a>
         </li>
     </ul>
 </div>
 <div style="float:left; width:5%">
     <p></p>
 </div>
-<div style="float:left; width:75%; height:100%; padding-left:5em; border:1px solid black; background-color:white; display:inherit">
+<div style="float:left; width:75%; height:100%; padding-left:5em; border:1px solid black; background-color:white; display:inherit; background: rgba(255,255,255,0.95)">
     @RenderBody()
 </div>
 @RenderSection("scripts", required: false)

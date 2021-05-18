@@ -27,16 +27,17 @@
                             @Html.ValidationMessageFor(model => model.Height, "", new { @class = "text-danger" })
                         </div>
                         <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd5345512-e3550bb9">
-                            <label for="Email" id="contact-email" class="field-label-4">Weight (kg) *</label>
+                            <label for="Email" id="contact-email">Weight (kg) *</label>
                             @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "text-danger" })
                         </div>
                         <div id="w-node-_2af7a1f6-9122-be1d-17a8-2bafd5345516-e3550bb9">
-                            <label for="Contact-Phone-Number" id="contact-phone" class="field-label-3">Heart Rate (times/min)</label>
+                            <label for="Contact-Phone-Number" id="contact-phone">Heart Rate (times/min)</label>
                             @Html.EditorFor(model => model.HeartRate, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.HeartRate, "", new { @class = "text-danger" })
                         </div>
-                    </div><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button">
+                    </div>
+                    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button" style="position:relative; top:30px; left:10px">
                 </form>
         </div>
     </section>

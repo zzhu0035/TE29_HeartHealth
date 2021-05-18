@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Plans</h4>
         <hr />
@@ -28,7 +28,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control", @id = "datetimepickerStart" } })
                 @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -36,7 +36,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control", @id = "datetimepickerEnd" } })
                 @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
             </div>
         </div>

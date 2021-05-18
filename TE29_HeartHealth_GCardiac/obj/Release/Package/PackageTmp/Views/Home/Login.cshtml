@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LOGIN</title>
+</head>
+<body>
+    @if (ViewBag.valid != null)
+    {
+        <script>
+            alert("@ViewBag.valid");
+        </script>
+    }
+    <div class="c" style="text-align:center; margin-top:50px ">
+        <div>
+            <h4>Sign in to G'Cardiac</h4>
+        </div>
+        <div>
+            <div class="col">
+                <form action="/Home/Login" method="post">
+                    <div class="form">
+                        <label for="usernameInput">Username</label>
+                        <input type="text" name="username" id="usernameInput" placeholder="Enter username">
+                    </div>
+                        <div class="form">
+                            <label for="userpwdInput">Password</label>
+                            <input type="password" name="pwd" id="userpwdInput" placeholder="Password">
+                        </div>
+                        <button type="submit">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

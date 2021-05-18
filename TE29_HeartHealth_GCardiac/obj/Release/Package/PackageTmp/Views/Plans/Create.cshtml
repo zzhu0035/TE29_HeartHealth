@@ -70,10 +70,12 @@
     <script>
         $(function () {
             $('#datetimepickerStart').datetimepicker({
-                minDate: new Date
+                minDate: new Date,
+                format: 'YYYY-MM-DDTHH:mm:ss'
             });
             $('#datetimepickerEnd').datetimepicker({
-                useCurrent: false 
+                useCurrent: false,
+                format: 'YYYY-MM-DDTHH:mm:ss'
             });
             $("#datetimepickerStart").on("dp.change", function (e) {
                 $('#datetimepickerEnd').data("DateTimePicker").minDate(e.date);

@@ -5,6 +5,14 @@
     Layout = "~/Views/UserDetails/_Main.cshtml";
 }
 
+<style>
+    body {
+        background-image: url("../../img/3.-How-to-Boost-Your-Weight-Loss--scaled.jpg");
+        background-size: cover;
+        background-position: center top;
+        display: flex;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
@@ -38,7 +46,7 @@
                             @Html.ValidationMessageFor(model => model.HeartRate, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button">
+                    <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-2 w-button" style="position:relative; top:30px; left:10px">
                 </form>
             </div>
     </section>
