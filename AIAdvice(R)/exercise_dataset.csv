@@ -1,0 +1,44 @@
+"Activity, Exercise or Sport (1 hour)",130 lb,155 lb,180 lb,205 lb,Calories per kg,type
+"Running, 5 mph (12 minute mile)",472,563,654,745,1.647825266,Running
+"Running, 6 mph (10 min mile)",590,704,817,931,2.059443081,Running
+"Running, 6.7 mph (9 min mile)",649,774,899,1024,2.265251988,Running
+"Running, 7.5mph (8 min mile)",738,880,1022,1163,2.574642352,Running
+"Running, 8.6 mph (7 min mile)",826,985,1144,1303,2.88267871,Running
+"Walking, under 2.0 mph, very slow",118,141,163,186,0.411617815,Walking
+"Walking 2.0 mph, slow",148,176,204,233,0.515199272,Walking
+Walking 2.5 mph,177,211,245,279,0.617426722,Walking
+"Walking 3.0 mph, moderate",195,232,270,307,0.679710997,Walking
+"Walking 4.0 mph, very brisk",295,352,409,465,1.02972154,Walking
+Unicycling,295,352,409,465,1.02972154,Bicycle
+"Cycling, <10 mph, leisure bicycling",236,281,327,372,0.82323563,Bicycle
+"Cycling, 10-11.9 mph, light",354,422,490,558,1.234853445,Bicycle
+"Cycling, 12-13.9 mph, moderate",472,563,654,745,1.647825266,Bicycle
+"Cycling, 14-15.9 mph, vigorous",590,704,817,931,2.059443081,Bicycle
+"Stationary cycling, very light",177,211,245,279,0.617426722,Bicycle
+"Stationary cycling, light",325,387,449,512,1.132625994,Bicycle
+"Stationary cycling, moderate",413,493,572,651,1.441339355,Bicycle
+"Stationary cycling, vigorous",620,739,858,977,2.162347534,Bicycle
+"Jumping rope, fast",708,844,981,1117,2.471060896,Jump rope
+"Jumping rope, moderate",590,704,817,931,2.059443081,Jump rope
+"Jumping rope, slow",472,563,654,745,1.647825266,Jump rope
+"Swimming laps, freestyle, fast",590,704,817,931,2.059443081,Aquatics
+"Swimming laps, freestyle, slow",413,493,572,651,1.441339355,Aquatics
+Swimming backstroke,413,493,572,651,1.441339355,Aquatics
+Swimming breaststroke,590,704,817,931,2.059443081,Aquatics
+Swimming butterfly,649,774,899,1024,2.265251988,Aquatics
+"Volleyball, beach",472,563,654,745,1.647825266,Seaside
+"Surfing, body surfing or board surfing",177,211,245,279,0.617426722,Seaside
+Badminton,266,317,368,419,0.92749409,Ball
+"Playing basketball, non game",354,422,490,558,1.234853445,Ball
+"Football or baseball, playing catch",148,176,204,233,0.515199272,Ball
+"Table tennis, ping pong",236,281,327,372,0.82323563,Ball
+"Tennis, doubles",354,422,490,558,1.234853445,Ball
+"Tennis, singles",472,563,654,745,1.647825266,Ball
+Playing volleyball,177,211,245,279,0.617426722,Ball
+Tai chi,236,281,327,372,0.82323563,Taichi
+"Aerobics, low impact",295,352,409,465,1.02972154,Aerobics
+"Aerobics, high impact",413,493,572,651,1.441339355,Aerobics
+"Aerobics, step aerobics",502,598,695,791,1.750729719,Aerobics
+"Aerobics, general",384,457,531,605,1.338434901,Aerobics
+"Stretching, hatha yoga",236,281,327,372,0.82323563,Aerobics
+"Children's games, hopscotch, dodgeball",295,352,409,465,1.02972154,Family
