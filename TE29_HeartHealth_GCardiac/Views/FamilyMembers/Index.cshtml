@@ -5,6 +5,7 @@
     Layout = "~/Views/UserDetails/_Main.cshtml";
 }
 
+
 <p style="margin-top:10px">
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -61,11 +62,15 @@
 </table>
 @section Scripts {
     <script type="text/javascript">
+        function showReward() {
+            if (confirm("Have you finished your exercise plan?")) {
+                secret.style.display = "none";
+                document.getElementById("secretText").style.display = "";
+            }
+        }
         var secret = document.getElementById("secret");
         secret.addEventListener("click", function () {
-            secret.onclick = null;
-            secret.style.display = "none";
-            document.getElementById("secretText").style.display = "";
+            secret.onclick = showReward();
         });
     </script>
 }
