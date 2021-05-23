@@ -21,6 +21,7 @@ namespace TE29_HeartHealth_GCardiac.Controllers
         // GET: Preference/Create
         public ActionResult Create(int? choise, string type)
         {
+            var weight = 80;
             TempData["type"] = type;
             if (choise == 0)
             {
@@ -30,8 +31,12 @@ namespace TE29_HeartHealth_GCardiac.Controllers
             if (db.UserDetails.Where(s => s.UserId == userId).Count() == 0)
             {
                 ViewBag.profile = 0;
+            } else
+            {
+                var weightList = db.UserDetails.Where(s => s.UserId == userId).Select(s => s.Weight).ToList();
+                weight = weightList[weightList.Count-1];
             }
-            var requestUrl = "recommend?weight_sel=80&sport_sel=All&diff_sel=0";
+            var requestUrl = "recommend?weight_sel=" + weight + "&sport_sel=All&diff_sel=0";
             var MOCK_BASE_URL = "http://data.gcardiac.tech:8500/";
 
             HttpClientHandler httpClientHandler = new HttpClientHandler()

@@ -9,6 +9,9 @@
 <p style="margin-top:10px">
     @Html.ActionLink("Create New", "Create")
 </p>
+<p>
+    @Html.ActionLink("Start customizing your plan", "Index", "Plan")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -32,33 +35,34 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Age)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Height)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Weight)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HeartRate)
-        </td>
-        <td>
-            <label style = "display:none", id = "secretText">@Html.DisplayFor(modelItem => item.SecretReward)</label>
-            <p id="secret">click to unlock SecretReward!</p>
-        </td>
-        <td>
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeartRate)
+            </td>
+            <td>
+                <label style="display:none" , id="secretText">@Html.DisplayFor(modelItem => item.SecretReward)</label>
+                <p id="secret">click to unlock SecretReward!</p>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 </table>
 @section Scripts {
     <script type="text/javascript">
